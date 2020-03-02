@@ -1,0 +1,33 @@
+<h1> autori </h1>
+<table>
+    <thead>
+        <tr>
+            <th>
+                id
+            </th>
+            <th>
+                cognome
+            </th>
+            <th>
+                nome
+            </th>
+        </tr>
+
+    </thead>
+    <tbody>
+        <% autori.forEach(function(autore) {%>
+            <tr>
+<td>
+    <%= autore.id %>
+</td>
+<td>
+    <%= autore.cognome %>
+  </td>
+  <td>
+    <%= autore.nome %>
+  </td>
+            </tr>
+        
+      <%  })%>
+    </tbody>
+</table>
