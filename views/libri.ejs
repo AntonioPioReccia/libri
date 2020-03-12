@@ -1,0 +1,33 @@
+<h1> autori </h1>
+<table>
+    <thead>
+        <tr>
+            <th>
+                id
+            </th>
+            <th>
+                cognome
+            </th>
+            <th>
+                nome
+            </th>
+        </tr>
+
+    </thead>
+    <tbody>
+        <% libri.forEach(function(libro) {%>
+            <tr>
+<td>
+    <%= libro.id %>
+</td>
+<td>
+    <%= libro.titolo %>
+  </td>
+  <td>
+    <%= libro.fk_autore %>
+  </td>
+            </tr>
+        
+      <%  })%>
+    </tbody>
+</table>

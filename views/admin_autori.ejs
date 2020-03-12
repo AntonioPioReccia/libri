@@ -1,0 +1,40 @@
+<h1> autori </h1>
+<table>
+    <thead>
+        <tr>
+            <th>
+                id
+            </th>
+            <th>
+                cognome
+            </th>
+            <th>
+                nome
+            </th>
+        </tr>
+
+    </thead>
+    <tbody>
+        <% autori.forEach(function(autore) {%>
+            <tr>
+<td>
+    <%= autore.id %>
+</td>
+<td>
+    <%= autore.cognome %>
+  </td>
+  <td>
+    <%= autore.nome %>
+  </td>
+
+            </tr>
+     <form action="/nuovoautore" method="post">
+                <input type="text" name="id" value="id">
+        <input type="text" name="nome" value="nome">
+  <input type="text" name="cognome" value="cognome">
+                <input type="submit" value="Aggiungi">
+            </form>
+    <form action="/cancellaautore" method="post"></form>
+      <%  })%>
+    </tbody>
+</table>
