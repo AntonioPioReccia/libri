@@ -27,7 +27,16 @@
     <%= libro.fk_autore %>
   </td>
             </tr>
-        
+            <form action="/nuovolibro" method="post">
+                <input type="text" name="id" value="id">
+        <input type="text" name="titolo" value="titolo">
+  <input type="text" name="fk_autore" value="fk_autore">
+                <input type="submit" value="Aggiungi">
+            </form>
+    <form action="/cancellalibro" method="post">
+        <input type="hidden" name="id" value="<%= libro.id %>">
+        <input type="submit" value="Elimina">
+    </form>
       <%  })%>
     </tbody>
 </table>

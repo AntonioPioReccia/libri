@@ -34,7 +34,10 @@
   <input type="text" name="cognome" value="cognome">
                 <input type="submit" value="Aggiungi">
             </form>
-    <form action="/cancellaautore" method="post"></form>
+    <form action="/cancellaautore" method="post">
+        <input type="hidden" name="id" value="<%= autore.id %>">
+        <input type="submit" value="Elimina">
+    </form>
       <%  })%>
     </tbody>
 </table>

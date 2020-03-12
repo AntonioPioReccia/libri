@@ -41,6 +41,30 @@ app.get ("/admin/libri", function(req,res){
         res.render("admin_libri", {libri:rows});
     }); 
 });
+app.post("/nuovoautore", function(req, res) {
+    const id = parseInt(req.body.id);
+    sql="INSERT INTO Autori(id,nome,cognome) VALUES("+id+",'"+ req.body.nome +"','"+req.body.cognome+"')";
+    db.run(sql);
+    res.redirect('/admin/autori');
+});
+app.post("/cancellaautore", function(req, res) {
+    const id = parseInt(req.body.id);
+    sql="DELETE FROM Autori WHERE Autori.id="+id;
+    db.run(sql);
+    res.redirect('/admin/autori');
+});
+app.post("/nuovolibro", function(req, res) {
+    const id = parseInt(req.body.id);
+    sql="INSERT INTO Libri(id,titolo, fk_autore) VALUES("+id+",'"+ req.body.titolo +"',"+req.body.fk_autore+")";
+    db.run(sql);
+    res.redirect('/admin/libri');
+});
+app.post("/cancellalibro", function(req, res) {
+    const id = parseInt(req.body.id);
+    sql="DELETE FROM Libri WHERE Libri.id="+id;
+    db.run(sql);
+    res.redirect('/admin/libri');
+});
 app.use( function(req, res){
     res.status(404);
     res.sendFile(path.join (__dirname,"public","404.html"));
